@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0a0f;
+  --left-accent: #00ffff;
+  --right-accent: #00665c;
+  --text: #e8e6f0;
+  --text-dim: #7a7891;
+  --divider: #1a1a2e;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #00ffff;
+}
+
+header p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+/* === MAIN SPLIT === */
+.split-container {
+  display: flex;
+  min-height: calc(100vh - 120px);
+  position: relative;
+}
+
+.talent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.talent.left::before {
+  background: var(--left-accent);
+}
+.talent.right::before {
+  background: var(--right-accent);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.18;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0.32;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+/* Divider line */
+.split-container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--left-accent) 30%,
+    var(--right-accent) 70%,
+    transparent
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.talent-image-wrap {
+  position: relative;
+  width: clamp(200px, 50%, 320px);
+  aspect-ratio: 3 / 4;
+  margin-bottom: 1.8rem;
+  z-index: 1;
+}
+
+.talent-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: drop-shadow(0 0 30px var(--glow));
+  animation: float 5s ease-in-out infinite;
+}
+
+.talent.right .talent-image-wrap img {
+  animation-delay: -2.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Placeholder when no image is loaded */
+.talent-image-wrap .placeholder {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--text-dim);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+/* === TALENT INFO === */
+.talent-name {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+  z-index: 1;
+}
+
+.talent.left .talent-name {
+  color: var(--left-accent);
+}
+.talent.right .talent-name {
+  color: var(--right-accent);
+}
+
+.talent-tagline {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+}
+
+/* === SOCIAL LINKS === */
+.socials {
+  display: flex;
+  gap: 1rem;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.talent.left .socials a:hover {
+  background: rgba(255, 60, 125, 0.15);
+  border-color: var(--left-accent);
+  color: var(--left-accent);
+  box-shadow: 0 0 18px var(--left-glow);
+  transform: translateY(-3px);
+}
+
+.talent.right .socials a:hover {
+  background: rgba(60, 223, 255, 0.15);
+  border-color: var(--right-accent);
+  color: var(--right-accent);
+  box-shadow: 0 0 18px var(--right-glow);
+  transform: translateY(-3px);
+}
+
+/* Tooltip */
+.socials a::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.socials a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 700px) {
+  .split-container {
+    flex-direction: column;
+  }
+  .split-container::after {
+    left: 0;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--left-accent) 30%,
+      #000000 50%,
+      var(--right-accent) 70%,
+      transparent
+    );
+  }
+  .talent {
+    padding: 2rem 1rem;
+  }
+  .talent-image-wrap {
+    width: clamp(180px, 55%, 260px);
+  }
+}
