@@ -19,93 +19,193 @@
       <h1>OSHI MILK</h1>
       <p>Virtual Lactation Agency</p>
     </header>
-    <main class="split-container">
-      <section class="talent left">
-        <div class="talent-image-wrap">
-          <img
-            src="03.png"
-            alt="EribyteVT"
-            onerror="
-              this.style.display = 'none';
-              this.nextElementSibling.style.display = 'flex';
-            "
-          />
-        </div>
-        <div class="talent-name">EribyteVT</div>
-        <div class="talent-tagline">Software Engineer</div>
-        <div class="socials">
-          <a
-            href="https://www.twitch.tv/EribyteVT"
-            data-label="Twitch"
-            target="_blank"
-            ><i class="fa-brands fa-twitch"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@EribyteVT"
-            data-label="YouTube Main"
-            target="_blank"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
 
-          <a
-            href="https://www.discord.gg/8pM8kFvP5C"
-            data-label="Discord"
-            target="_blank"
-            ><i class="fa-brands fa-discord"></i
-          ></a>
-          <a href="https://x.com/EribyteVT" data-label="Twitter" target="_blank"
-            ><i class="fa-brands fa-x-twitter"></i
-          ></a>
-        </div>
-      </section>
+    <div class="talent-grid" id="talentGrid"></div>
 
-      <section class="talent right">
-        <div class="talent-image-wrap">
-          <img
-            src="wokeesex.png"
-            alt="DragonCatsVT"
-            onerror="
-              this.style.display = 'none';
-              this.nextElementSibling.style.display = 'flex';
-            "
-          />
-        </div>
-        <div class="talent-name">DragonCatsVT</div>
-        <div class="talent-tagline">Vampire Bartender</div>
-        <div class="socials">
-          <a
-            href="https://www.twitch.tv/dragoncatsvt"
-            data-label="Twitch"
-            target="_blank"
-            ><i class="fa-brands fa-twitch"></i
-          ></a>
-          <a
-            href="https://discord.com/invite/FYEabfMVD7"
-            data-label="Discord"
-            target="_blank"
-            ><i class="fa-brands fa-discord"></i
-          ></a>
+    <footer>
+      <p>&copy; 2026 Oshi Milk</p>
+    </footer>
 
-          <a
-            href="https://www.youtube.com/@DragonCatsVT"
-            data-label="YouTube Main"
-            target="_blank"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@DragonCatsVTVODS"
-            data-label="YouTube Vods"
-            target="_blank"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-          <a
-            href="https://x.com/DragonCatsVT"
-            data-label="Twitter"
-            target="_blank"
-            ><i class="fa-brands fa-x-twitter"></i
-          ></a>
-        </div>
-      </section>
-    </main>
+    <script>
+      const talents = [
+        {
+          name: "EribyteVT",
+          tagline: "Software Engineer",
+          image: "03.png",
+          accent: "#00ffff",
+          socials: [
+            {
+              url: "https://www.twitch.tv/EribyteVT",
+              icon: "fa-brands fa-twitch",
+              label: "Twitch",
+            },
+            {
+              url: "https://www.youtube.com/@EribyteVT",
+              icon: "fa-brands fa-youtube",
+              label: "YouTube",
+            },
+            {
+              url: "https://www.tiktok.com/@EribyteVT",
+              icon: "fa-brands fa-tiktok",
+              label: "Tiktok",
+            },
+            {
+              url: "https://www.discord.gg/8pM8kFvP5C",
+              icon: "fa-brands fa-discord",
+              label: "Discord",
+            },
+            {
+              url: "https://x.com/EribyteVT",
+              icon: "fa-brands fa-x-twitter",
+              label: "Twitter",
+            },
+          ],
+        },
+        {
+          name: "DragonCatsVT",
+          tagline: "Vampire Bartender",
+          image: "wokeesex.png",
+          accent: "#00ffa2",
+          socials: [
+            {
+              url: "https://www.twitch.tv/dragoncatsvt",
+              icon: "fa-brands fa-twitch",
+              label: "Twitch",
+            },
+            {
+              url: "https://discord.com/invite/FYEabfMVD7",
+              icon: "fa-brands fa-discord",
+              label: "Discord",
+            },
+            {
+              url: "https://www.youtube.com/@DragonCatsVT",
+              icon: "fa-brands fa-youtube",
+              label: "YouTube",
+            },
+            {
+              url: "https://www.youtube.com/@DragonCatsVTVODS",
+              icon: "fa-brands fa-youtube",
+              label: "VODs",
+            },
+            {
+              url: "https://x.com/DragonCatsVT",
+              icon: "fa-brands fa-x-twitter",
+              label: "Twitter",
+            },
+          ],
+        },
+        {
+          name: "MinaMoth",
+          tagline: "Goofy Mothgirl!",
+          image: "./minami.png",
+          accent: "#ff6600",
+          socials: [
+            {
+              url: "https://www.twitch.tv/minamothvt",
+              icon: "fa-brands fa-twitch",
+              label: "Twitch",
+            },
+            {
+              url: "https://www.youtube.com/@MinaMothVT",
+              icon: "fa-brands fa-youtube",
+              label: "YouTube",
+            },
+            {
+              url: "https://www.tiktok.com/@minamothvt",
+              icon: "fa-brands fa-tiktok",
+              label: "YouTube",
+            },
+            {
+              url: "https://discord.gg/jPKpUDyKKM",
+              icon: "fa-brands fa-discord",
+              label: "Discord",
+            },
+          ],
+        },
+        {
+          name: "InternetRain",
+          tagline: "hacker trapped inside your PC",
+          image: "Netto_fugi.png",
+          accent: "#00fcd5",
+          socials: [
+            {
+              url: "https://www.twitch.tv/internetrain",
+              icon: "fa-brands fa-twitch",
+              label: "Twitch",
+            },
+            {
+              url: "https://youtube.com/@internetrain?si=tHnkIHQCruz9U-Gr&sub_confirmation=1",
+              icon: "fa-brands fa-youtube",
+              label: "YouTube",
+            },
+            {
+              url: "https://discord.gg/TC7NyGsWtM",
+              icon: "fa-brands fa-discord",
+              label: "Discord",
+            },
+            {
+              url: "http://internetrain.bandcamp.com/",
+              icon: "fa-brands fa-bandcamp",
+              label: "Bandcamp",
+            },
+            {
+              url: "https://open.spotify.com/artist/7hCQp6KXZw6xeW3U8JFI6D?utm_medium=share&utm_source=linktree",
+              icon: "fa-brands fa-spotify",
+              label: "Spotify",
+            },
+          ],
+        },
+      ];
+
+      // Fisher-Yates shuffle
+      function shuffle(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      function buildGrid() {
+        const grid = document.getElementById("talentGrid");
+        const shuffled = shuffle(talents);
+
+        shuffled.forEach((t, i) => {
+          const card = document.createElement("section");
+          card.className = "talent-card";
+          card.style.setProperty("--accent", t.accent);
+
+          // Random float delay per card
+          const floatDelay = (Math.random() * -5).toFixed(2);
+
+          const socialsHTML = t.socials
+            .map(
+              (s) =>
+                `<a href="${s.url}" data-label="${s.label}" target="_blank" rel="noopener"><i class="${s.icon}"></i></a>`,
+            )
+            .join("");
+
+          const imageHTML = t.image
+            ? `<img src="${t.image}" alt="${t.name}" style="animation-delay:${floatDelay}s"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+               <div class="placeholder" style="display:none">Image not found</div>`
+            : `<div class="placeholder">Awaiting<br/>Debut</div>`;
+
+          card.innerHTML = `
+            <div class="talent-image-wrap">
+              ${imageHTML}
+            </div>
+            <div class="talent-name">${t.name}</div>
+            <div class="talent-tagline">${t.tagline}</div>
+            <div class="socials">${socialsHTML}</div>
+          `;
+
+          grid.appendChild(card);
+        });
+      }
+
+      buildGrid();
+    </script>
   </body>
 </html>
