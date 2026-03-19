@@ -46,7 +46,7 @@ const talents = [
     twitchChannel: "dragoncatsvt",
     bio: `Valerie von Weisse is a Vampire over 500 years old, although nowadays she's a bartender, not because she needs the money of course hahaha what a silly thing to think
     She can be found streaming a variety of different games, usually those suggested by chat in her discord
-    she enjoys Transformers, CastleVania, SIGNALIS, and of course women of all kinds`,
+    she enjoys Transformers, Castlevania, SIGNALIS, and of course women of all kinds`,
     youtubeHandle: "@DragonCatsVT",
     socials: [
       {
