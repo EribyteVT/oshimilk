@@ -175,4 +175,32 @@ const talents = [
       },
     ],
   },
+  {
+    name: "SapphiMonki",
+    tagline: "The Gemstone Monki",
+    image: "monki.png",
+    accent: "#DAA520",
+    twitchChannel: "sapphimonki",
+    bio: `Sapphi is a monki vtuber who adores shiny things and pretty rocks. 
+          She plays a variety of games, most with her friends, but focuses on comfy and calming vibes on solo streams.
+          Her favorite things include Monster Hunter, Transformers, Souls Likes and most things sci-fi`,
+    youtubeHandle: "@SapphiMonki",
+    socials: [
+      {
+        url: "https://www.twitch.tv/sapphimonki",
+        icon: "fa-brands fa-twitch",
+        label: "Twitch",
+      },
+      {
+        url: "https://www.youtube.com/@SapphiMonki",
+        icon: "fa-brands fa-youtube",
+        label: "YouTube",
+      },
+      {
+        url: "https://www.instagram.com/sapphimonki/",
+        icon: "fa-brands fa-instagram",
+        label: "Instagram",
+      },
+    ],
+  },
 ];
